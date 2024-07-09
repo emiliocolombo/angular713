@@ -1,0 +1,138 @@
+h1{
+    color: blue;
+}
+
+.inputNumber[_ngcontent-ng-c3246933263]{
+  display: flex;
+  justify-content: center;
+}
+
+.tituloLista{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgba(255, 255, 255, 0.821);
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+.tablaLista{
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.744);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  border-radius: 20px;
+  margin-bottom: 3px;
+}
+.paddingTable{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-top: 8px;
+}
+.headTable{
+  background-color: rgba(130, 5, 118, 0.786)!important;
+}
+
+img{
+    width: 100px;
+}
+
+.clearance {
+    border: 5px solid rgb(115, 146, 57)!important;
+}
+
+.celdaDatoCerveza{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 14.2857%;
+    padding: 0px;
+}
+
+.filaDatosCerveza{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-shadow: 10px 5px 15px 5px rgba(0, 2, 3, 0.815);
+}
+
+.botonComprar {
+    position: relative;
+    padding: 10px 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 17px;
+    padding-right: 20px;
+    border-radius: 7px;
+    border: 0px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #023eac;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+  
+  .botonComprar:hover {
+    background: rgba(255, 242, 61, 0.541);
+    box-shadow: 0 0 30px 5px rgb(74, 103, 19);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  
+  .botonComprar:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+  .botonComprar::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  .botonComprar:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }

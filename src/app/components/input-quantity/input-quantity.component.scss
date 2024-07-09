@@ -1,0 +1,28 @@
+.inputQuantity{
+    display: flex;
+    flex-direction: row;
+}
+.botonMenos{
+    width: 30px;
+    border-radius: 50%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8px;
+}
+.botonMas{
+    width: 30px;
+    border-radius: 50%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8px;
+    margin-top: 1px;
+}
+.inputNumber{
+    width: 33.333%;
+    margin-left: 18px;
+    border: 0;
+}

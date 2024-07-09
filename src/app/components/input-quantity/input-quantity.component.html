@@ -1,0 +1,12 @@
+<div class="inputQuantity">
+    <button (click)="downQuantity()" class="btn btn-primary btn-sm botonMenos col-4">-</button>
+    <input 
+        class="inputNumber"
+        type="number"
+        min="0"
+        max={{max}}
+        [(ngModel)]="quantity"
+        (keyup)="onChangeQuantity($event)"
+        (change)="onChangeQuantity($event)">
+    <button (click)="upQuantity()" class="btn btn-primary btn-sm botonMas col-4">+</button>
+</div>

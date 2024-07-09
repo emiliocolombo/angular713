@@ -1,0 +1,35 @@
+<h1 class="w-100 tituloLista">Cervezas</h1>
+<table class="table tablaLista">
+    <thead class="w-100 paddingTable">
+        <tr class="headTable filaDatosCerveza border border-0">
+            <th class="text-center col bg-transparent border border-0">Name</th>
+            <th class="text-center col bg-transparent border border-0">Image</th>
+            <th class="text-center col bg-transparent border border-0">Type</th>
+            <th class="text-center col bg-transparent border border-0">Price</th>
+            <th class="text-center col bg-transparent border border-0">Stock</th>
+            <th class="text-center col bg-transparent border border-0">Cantidad</th>
+            <th class="text-center col bg-transparent border border-0">Comprar</th>
+        </tr>
+    </thead>
+    <tbody class="w-100 paddingTable">
+        @for (beer of (listBeers$ | async); track beer.name) {   
+            <tr class="filaDatosCerveza border border-0" [class]="{'clearance': beer.clearance}">
+                <td class="celdaDatoCerveza col-2 bg-transparent border border-0">{{beer.name}}</td> 
+                <td class="celdaDatoCerveza col-2 bg-transparent border border-0"><img class="img-thumbnail" src={{beer.image}} alt="imagen cerveza"></td>
+                <td class="celdaDatoCerveza col-2 bg-transparent border border-0">{{beer.type}}</td>
+                <td class="celdaDatoCerveza col-2 bg-transparent border border-0">{{beer.price}}</td>
+                @if (beer.stock > 0) {
+                    <td class="celdaDatoCerveza col-2 bg-transparent border border-0">{{beer.stock}}</td>
+                }@else {
+                    <td class="celdaDatoCerveza col-2 bg-transparent border border-0">SIN  STOCK</td>
+                }
+                <td class="celdaDatoCerveza col-2 bg-transparent border border-0">
+                    <app-input-quantity [(quantity)]="beer.quantity" [max]="beer.stock" (maxReached)="this.maxReached($event)"></app-input-quantity>
+                </td>
+                <td class="celdaDatoCerveza col-2 bg-transparent border border-0">
+                    <button class="botonComprar" (click)="addToCart(beer)">Comprar</button>
+                </td>
+            </tr> 
+        }
+    </tbody>
+</table>
