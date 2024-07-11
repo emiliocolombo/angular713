@@ -25,7 +25,7 @@ export class BeerService {
   private _listBeers: Beer[] = [];
   //creo el observable
   cartBeers : BehaviorSubject<Beer[]> = new BehaviorSubject(this._cartBeers);
-  listBeers : BehaviorSubject<Beer[]> = new BehaviorSubject(this._cartBeers);
+  listBeers : BehaviorSubject<Beer[]> = new BehaviorSubject(this._listBeers);
 
 
   addToBeerList(beer: Beer) {

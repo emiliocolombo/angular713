@@ -120,15 +120,23 @@
   }
   // animacion del loader
   
+  .aparecer{
+    transform: translateY(300px);
+  }
+  
+  .esconder{
+    transform: translateY(-300px);
+  }
+
   .center {
     position: absolute;
     transform: translateX(-50%);
-    left: 75%;
+    left: 78.5%;
   }
   
   .container {
     height: 31.25em;
-    width: 21.87em;
+    width: 10.87em;
     margin-top: -130px;
     z-index: 500;
   }
