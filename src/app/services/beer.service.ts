@@ -70,4 +70,19 @@ export class BeerService {
   getBeersLenght() : number {
     return this._cartBeers.length;
   }
+
+  getTotalPrecio() : number {
+    let suma : number = 0;
+    this._cartBeers.forEach(
+      (beer: Beer)=>{
+        suma += beer.price * beer.stock;
+      }
+    )
+    return suma;
+  }
+
+  comprar(){
+    this._cartBeers = [];
+    this.cartBeers.next([]);
+  }
 }

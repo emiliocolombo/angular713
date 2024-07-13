@@ -1,4 +1,5 @@
 .elementoCarrito{
+  width: 100%;
     height: 75px;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -7,10 +8,11 @@
 }
 
 .tituloCarrito{
+  text-align: center;
   font-size: 50px;
   margin-top: 12px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: rgba(255, 255, 255, 0.892);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgba(255, 255, 255, 0.916);
 }
 
 .inputCarrito{
@@ -22,9 +24,12 @@
 }
 
 .carrito{
-    margin-top: 24px;
-    margin-left: 5px;
-    margin-right: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 24px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .botonComprar {
@@ -121,25 +126,29 @@
   // animacion del loader
   
   .aparecer{
-    transform: translateY(300px);
+    transform: translateY(600px) rotate(0)!important;
+
   }
   
-  .esconder{
-    transform: translateY(-300px);
-  }
-
+  // .esconder{
+  //   transform: translateY(600px)!important;
+  // }
+  
   .center {
     position: absolute;
     transform: translateX(-50%);
-    left: 78.5%;
+    left: 72.5%;
   }
   
   .container {
+    transform: rotate(10deg);
     height: 31.25em;
     width: 10.87em;
-    margin-top: -130px;
+    margin-top: -730px;
+    transition: transform 1s ease-in-out;
     z-index: 500;
   }
+
   
   .rope {
     height: 13.62em;
@@ -366,3 +375,43 @@
       font-size: 20px;
     }
   }
+
+  // boton comprar
+  .btn {
+    width: 6.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   }
+   
+   button:hover {
+    color: black;
+   }
+   
+   button:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.2s;
+   }
+   
+   button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+   }

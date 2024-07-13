@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, ElementRef, Renderer2 } from '@angular/core';
 import { Beer } from './Beer';
 import { FormsModule } from '@angular/forms';
 import { InputQuantityComponent } from '../input-quantity/input-quantity.component';
@@ -21,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class BeerListComponent {
   
-  constructor(private cart : BeerService){
+  constructor(private cart : BeerService, private renderer: Renderer2, private el: ElementRef){
     this.listBeers$ = this.cart.listBeers.asObservable();
   }
 
@@ -35,12 +35,17 @@ export class BeerListComponent {
     }
   }
 
+  // AVERIGUAR COMO MANEJAR ECEPIONES Y HACER UN CARTELITO GENERICO PARA MOSTRAR ERRORES ESPERADOS
   maxReached(msg : String): void {
     alert(msg);
   }
 
   addToBeerList(beer: Beer){
     this.cart.addToBeerList(beer);
+  }
+
+  getBeersLenght() : number {
+    return this.cart.getBeersLenght();
   }
 
 }

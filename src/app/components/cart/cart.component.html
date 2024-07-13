@@ -1,6 +1,6 @@
 <h3 class="tituloCarrito">Carrito de Compras</h3>
 <div class="carrito">
-    <div class="container center">        
+    <div class="container center" id="spiderContainer">        
         <div class="rope center">
           <div class="legs center">
             <div class="boot-l"></div>
@@ -43,6 +43,9 @@
             }
             
         }
+        <button (click)="comprar()" (mouseover)="showTotal()" (mouseleave)="showComprar()" class="btn" id="btnComprar">
+            {{precioTotal}} 
+        </button>
     }@else {
         <div class="textoLoader">
             <p>no hay productos en el carrito</p>
