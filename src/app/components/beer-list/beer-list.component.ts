@@ -1,12 +1,9 @@
-import { Component, Injectable, ElementRef, Renderer2 } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { Beer } from './Beer';
-import { FormsModule } from '@angular/forms';
 import { InputQuantityComponent } from '../input-quantity/input-quantity.component';
 import { BeerService } from '../../services/beer.service';
-import { BeerDataService } from '../../services/beer-data.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 
 
 @Component({
@@ -21,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class BeerListComponent {
   
-  constructor(private cart : BeerService, private renderer: Renderer2, private el: ElementRef){
+  constructor(private cart : BeerService){
     this.listBeers$ = this.cart.listBeers.asObservable();
   }
 

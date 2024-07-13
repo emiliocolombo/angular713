@@ -14,13 +14,6 @@ export class BeerService {
     this.listBeers.next(this._listBeers);
     
   }
-  // startBeerList():void{
-  //   this.data.getAll().subscribe({next: (datos) => {this._listBeers = datos}});
-  //   this.listBeers.subscribe();
-  // }
-  
-  //creo que debo abstraer la lista de cervezas al service 
-  //tambien
   private _cartBeers: Beer[] = [];
   private _listBeers: Beer[] = [];
   //creo el observable

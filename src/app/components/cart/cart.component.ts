@@ -32,37 +32,21 @@ export class CartComponent {
   removeFromCart(beer: Beer){
     this.cart.removeFromCart(beer);
     beer.quantity = beer.stock;
-    // if(this.getBeersLenght() <= 0){
-    //   this.toogleSpiderMan(true);
-    // }
   }
 
   getBeersLenght() : number {
     return this.cart.getBeersLenght();
   }
 
-  // toogleSpiderMan(aparecer: boolean):void{
-  //   const elemento = this.el.nativeElement.querySelector('#spiderContainer');
-  //   if(aparecer){
-  //     this.renderer.removeClass(elemento, 'desaparecer');
-  //     this.renderer.addClass(elemento, 'aparecer');
-  //   }else{
-  //     this.renderer.addClass(elemento, 'desaparecer');
-  //     this.renderer.removeClass(elemento, 'aparecer');
-  //   }
-  // }
-
   toogleSpider(): void {
-    console.log(1);
-    
     if(this.getBeersLenght() == 0){
       const elemento = this.el.nativeElement.querySelector('#spiderContainer');
-      // this.renderer.removeClass(elemento, 'desaparecer');
       this.renderer.addClass(elemento, 'aparecer');
     }else{
       const elemento = this.el.nativeElement.querySelector('#spiderContainer');
-      this.renderer.removeClass(elemento, 'aparecer');
-      // this.renderer.addClass(elemento, 'desaparecer');
+      if(elemento.classList.contains('aparecer')){
+        this.renderer.removeClass(elemento, 'aparecer');
+      }
     }
   }
   
@@ -80,6 +64,7 @@ export class CartComponent {
   showComprar() : void {
     this.precioTotal = 'Comprar';
   }
+
   comprar() : void{
     this.cart.comprar();
     this.showComprar();
